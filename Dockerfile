@@ -1,7 +1,7 @@
 FROM node:lts-alpine as base-stage
 WORKDIR /app
 COPY . /app
-RUN yarn
+RUN yarn config set cache-folder /usr/local/Caches/yarn && yarn
 
 FROM base-stage as prod-stage
 WORKDIR /app
