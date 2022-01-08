@@ -4,6 +4,7 @@ COPY . /app
 ENV NEXT_TELEMETRY_DEBUG=1
 RUN yarn config set cache-folder /usr/local/Caches/yarn && yarn
 
+
 FROM base-stage as prod-stage
 WORKDIR /app
 COPY . /app
