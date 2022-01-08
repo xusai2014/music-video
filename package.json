@@ -2,7 +2,7 @@
   "name": "next-site",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 5000",
     "build": "next build",
     "start": "pm2 start ecosystem.config.js",
     "lint": "npm-run-all --parallel --continue-on-error lint:*",
