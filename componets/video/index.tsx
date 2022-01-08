@@ -2,8 +2,8 @@ import "video.js/dist/video-js.min.css";
 import videojs from "video.js";
 
 import { useEffect, useRef } from "react";
-export default () => {
-	const vRef = useRef<HTMLElement>(null);
+const Video = () => {
+	const vRef = useRef<HTMLVideoElement>(null);
 	useEffect(() => {
 		if (vRef?.current) {
 			const player = videojs(
@@ -52,3 +52,4 @@ export default () => {
 		</video>
 	);
 };
+export default Video;
