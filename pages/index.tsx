@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/home.module.scss";
 import Video from "../componets/video";
+import Link from "next/link";
 const Home: NextPage = () => {
 	return (
 		<div className={styles.container}>
@@ -22,10 +22,10 @@ const Home: NextPage = () => {
 				<p className={styles.description}>痴情的耳朵会怀孕！</p>
 
 				<div className={styles.grid}>
-					<Video></Video>
+					<Video />
 					{[].map(() => {
 						return (
-							<a
+							<Link
 								href="https://nextjs.org/docs"
 								className={styles.card}
 							>
@@ -34,16 +34,16 @@ const Home: NextPage = () => {
 									Find in-depth information about Next.js
 									features and API.
 								</p>
-							</a>
+							</Link>
 						);
 					})}
 				</div>
 			</main>
 
 			<footer className={styles.footer}>
-				<a href="/" target="_blank" rel="noopener noreferrer">
+				<Link href="/" target="_blank" rel="noopener noreferrer">
 					{"屮急急 "}出品
-				</a>
+				</Link>
 			</footer>
 		</div>
 	);
