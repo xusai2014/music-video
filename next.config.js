@@ -11,8 +11,8 @@ const moduleExports = (phase, {defaultConfig}) => {
 			includePaths: [path.join(__dirname, "styles")], //https://nextjs.org/docs/basic-features/built-in-css-support#sass-support
 		},
 		sentry: {
-			disableServerWebpackPlugin: process.env.ENV_NAME === 'online', // 设定仅在生产环境上线打包时构建source map 上传
-			disableClientWebpackPlugin: process.env.ENV_NAME === 'online',
+			disableServerWebpackPlugin: false, // 设定仅在生产环境上线打包时构建source map 上传
+			disableClientWebpackPlugin: false,
 		},
 		i18n: {
 			localeDetection: true,
@@ -61,7 +61,7 @@ const sentryWebpackPluginOptions = {
 	ignore: ['node_modules'],
 	environment: process.env.ENV_NAME || 'development',
 	configFile: path.join(__dirname, './sentry.properties'),
-	dryRun: process.env.NODE_ENV === 'development',
+	dryRun: true,
 	silent: process.env.NODE_ENV === 'development',
 	debug: false,
 }
