@@ -6,7 +6,7 @@ const Video = () => {
 	const vRef = useRef<HTMLVideoElement>(null);
 	useEffect(() => {
 		if (vRef?.current) {
-			const player = videojs(
+			videojs(
 				vRef.current || "video",
 				{
 					autoplay: true
@@ -45,6 +45,7 @@ const Video = () => {
 				<a
 					href="https://videojs.com/html5-video-support/"
 					target="_blank"
+					rel="noopener noreferrer"
 				>
 					supports HTML5 video
 				</a>

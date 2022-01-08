@@ -17,23 +17,22 @@ const Home: NextPage = () => {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>
-					欢迎来到<a href="/">音乐碎片</a>
+					欢迎来到<Link href="/">音乐碎片</Link>
 				</h1>
 				<p className={styles.description}>痴情的耳朵会怀孕！</p>
 
 				<div className={styles.grid}>
 					<Video />
-					{[].map(() => {
+					{[].map((item: any, index) => {
 						return (
-							<Link
-								href="https://nextjs.org/docs"
-								className={styles.card}
-							>
-								<h2>Documentation &rarr;</h2>
-								<p>
-									Find in-depth information about Next.js
-									features and API.
-								</p>
+							<Link href="/" key={item?.id || index}>
+								<a className={styles.card}>
+									<h2>Documentation &rarr;</h2>
+									<p>
+										Find in-depth information about Next.js
+										features and API.
+									</p>
+								</a>
 							</Link>
 						);
 					})}
@@ -41,8 +40,10 @@ const Home: NextPage = () => {
 			</main>
 
 			<footer className={styles.footer}>
-				<Link href="/" target="_blank" rel="noopener noreferrer">
-					{"屮急急 "}出品
+				<Link passHref={true} href="/">
+					<a target="_blank" rel="noopener noreferrer">
+						{"屮急急 "}出品
+					</a>
 				</Link>
 			</footer>
 		</div>
