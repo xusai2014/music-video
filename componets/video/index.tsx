@@ -3,7 +3,7 @@ import videojs from "video.js";
 
 import { useEffect, useRef } from "react";
 export default () => {
-	const vRef = useRef("my-video");
+	const vRef = useRef<HTMLElement>(null);
 	useEffect(() => {
 		if (vRef?.current) {
 			const player = videojs(
