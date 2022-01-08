@@ -7,6 +7,7 @@ const moduleExports = (phase, {defaultConfig}) => {
 	const nextConfig = {
 		webpack5: true,
 		reactStrictMode: true,
+		productionBrowserSourceMaps: true,
 		sassOptions: {
 			includePaths: [path.join(__dirname, "styles")], //https://nextjs.org/docs/basic-features/built-in-css-support#sass-support
 		},
