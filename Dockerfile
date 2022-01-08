@@ -15,4 +15,4 @@ COPY . /app
 RUN yarn run build
 RUN yarn run start
 EXPOSE 5000
-ENTRYPOINT ["/sbin/tini", "--", "./docker_entrypoint.sh"]
+ENTRYPOINT ["/bin/sh", "--", "./docker_entrypoint.sh"]
