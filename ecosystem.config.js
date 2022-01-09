@@ -2,7 +2,7 @@ module.exports = {
 	apps: [
 		{
 			name: "video",
-			script: "next start -p 5000",
+			script: "npx next start -p 5000",
 			instances: 1,
 			watch: false,
 			max_memory_restart: "1G",
