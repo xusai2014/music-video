@@ -6,7 +6,7 @@ ENV NPM_CONFIG_CACHE /cache/npm
 WORKDIR /app
 COPY . /app
 ENV NEXT_TELEMETRY_DEBUG=1
-RUN yarn && pm2 install pm2-logrotate \
+RUN yarn install -g pm2 & yarn && pm2 install pm2-logrotate \
   && pm2 set pm2-logrotate:max_size 50M \
   && pm2 set pm2-logrotate:retain 10 
 
