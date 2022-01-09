@@ -8,8 +8,7 @@ COPY . /app
 ENV NEXT_TELEMETRY_DEBUG=1
 RUN yarn && pm2 install pm2-logrotate \
   && pm2 set pm2-logrotate:max_size 50M \
-  && pm2 set pm2-logrotate:retain 10 \
- 
+  && pm2 set pm2-logrotate:retain 10 
 
 
 FROM base-stage as prod-stage
