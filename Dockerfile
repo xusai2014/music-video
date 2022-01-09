@@ -16,7 +16,7 @@ FROM base-stage as prod-stage
 WORKDIR /app
 COPY . /app
 RUN  rm -rf node_modules & \
- yarn install --production && yarn run start
+ yarn install --production
 
 EXPOSE 5000
 ENTRYPOINT ["/bin/sh", "--", "./docker_entrypoint.sh"]
