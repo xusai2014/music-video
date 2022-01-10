@@ -1,4 +1,4 @@
-FROM node:lts-alpine as base-stage
+FROM node:alpine3.15 as base-stage
 WORKDIR /app
 COPY . /app
 ENV NEXT_TELEMETRY_DEBUG=1
