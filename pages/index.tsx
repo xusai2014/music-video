@@ -5,6 +5,7 @@ import Video from "../componets/video";
 import Link from "next/link";
 import fetcher from "../lib/fetcher";
 import { BASE_URL } from "../lib/CONSTANTS";
+// @ts-ignore
 const Home: NextPage = ({data}) => {
 	const { articleList = [] } = data;
 	return (
@@ -25,7 +26,7 @@ const Home: NextPage = ({data}) => {
 				<p className={styles.description}>痴情的耳朵会怀孕！</p>
 
 				<div className={styles.grid}>
-					<Video />
+					<Video  source={''}/>
 					{articleList?.map((item: any, index:number) => {
 						return (
 							<Video source={item.t_video} key={item.id || index} />
