@@ -7,19 +7,19 @@ type Data = {
 	name: string;
 };
 
-export default function handler(
+export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<Data>
 ) {
 	// res.status(200).json({ name: "John Doe" });
 	//res.send(`req.url: "${req.url}"`);
 	req.url =
-		"https://v3-web.douyinvod.com/4dc69ad300befb144105b7f065107f67/61d892e7/video/tos/cn/tos-cn-ve-15-alinc2/80921b95859d4eed93defb522f03fb14/?a=6383&br=1160&bt=1160&cd=0%7C0%7C0&ch=5&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=OyFYlOZZI0J.17Tz7Th9Ixn_pbsdC7INHqY&l=20220108022205010133044171124478B2&lr=all&mime_type=video_mp4&net=0&pl=0&qs=0&rc=am5saTY6Zm53OjMzNGkzM0ApZztoNzc3NDs3Nzo8NzxmNGdwaDEvcjRnZDRgLS1kLTBzczZgYl4vMWAuLS4tXi80X2E6Yw%3D%3D&vl=&vr=";
+		"https://www.douyin.com/aweme/v1/play/?aid=6383&app_name=aweme&channel=channel_pc_web&device_platform=web&did=0&file_id=30e7d21f810940fdaa9a802f7e6db8ca&fp=verify_kyi6yfx8_STNcXLoq_GfZs_4JXx_BGFh_y19vcMZ6N8z0&is_play_url=1&line=0&referer=https%3A%2F%2Fwww.douyin.com%2Fvideo%2F7020764246476590339&sign=ef6effe0c1679572042461f21d6f2673&source=PackSourceEnum_AWEME_DETAIL&target=7020764246476590339&user_agent=Mozilla%2F5.0%20%28Macintosh%3B%20Intel%20Mac%20OS%20X%2010_16_0%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F74.0.3729.169%20Safari%2F537.36&video_id=v0300fg10000c5nc743c77u3sfnv06j0&webid=7052930793195013644";
 
 	return proxy.web(req, res, {
-		target: "http://v3-web.douyinvod.com",
+		target: "http://www.douyin.com",
 		headers: {
-			Host: "v3-web.douyinvod.com",
+			Host: "www.douyin.com",
 			Referer: req.url
 		},
 		secure: false

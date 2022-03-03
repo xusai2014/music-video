@@ -2,7 +2,7 @@ import "video.js/dist/video-js.min.css";
 import videojs from "video.js";
 
 import { useEffect, useRef } from "react";
-const Video = () => {
+const Video = ({source}:{source:string}) => {
 	const vRef = useRef<HTMLVideoElement>(null);
 	useEffect(() => {
 		if (vRef?.current) {
