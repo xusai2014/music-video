@@ -1,8 +1,9 @@
+"use client";
 import "video.js/dist/video-js.min.css";
 import videojs from "video.js";
 
 import { useEffect, useRef } from "react";
-const Video = ({source}:{source:string}) => {
+const Video = ({ source }: { source: string }) => {
 	const vRef = useRef<HTMLVideoElement>(null);
 	useEffect(() => {
 		if (vRef?.current) {
@@ -42,13 +43,6 @@ const Video = ({source}:{source:string}) => {
 			<p className="vjs-no-js">
 				To view this video please enable JavaScript, and consider
 				upgrading to a web browser that
-				<a
-					href="https://videojs.com/html5-video-support/"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					supports HTML5 video
-				</a>
 			</p>
 		</video>
 	);
