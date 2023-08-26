@@ -3,10 +3,11 @@ import Head from "next/head";
 import styles from "../styles/home.module.scss";
 import Link from "next/link";
 import fetcher from "../lib/fetcher";
-import { BASE_URL } from "../lib/CONSTANTS";
+import { BASE_URL_INTERNL } from "../lib/CONSTANTS";
 
 import dynamic from "next/dynamic";
 const Video = dynamic(() => import("../componets/video"), { ssr: false });
+
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 
@@ -31,15 +32,15 @@ const Home: NextPage = ({ data }) => {
 				<p className={styles.description}>痴情的耳朵会怀孕！</p>
 
 				<div className={styles.grid}>
-					<Video source={""} />
-					{/*{articleList?.map((item: any, index: number) => {*/}
-					{/*	return (*/}
-					{/*		<Video*/}
-					{/*			source={item.t_video}*/}
-					{/*			key={item.id || index}*/}
-					{/*		/>*/}
-					{/*	);*/}
-					{/*})}*/}
+					<Video source={"/api/hello"} />
+					{articleList?.map((item: any, index: number) => {
+						return (
+							<Video
+								source={item.t_video}
+								key={item.id || index}
+							/>
+						);
+					})}
 				</div>
 			</main>
 
@@ -53,21 +54,29 @@ const Home: NextPage = ({ data }) => {
 };
 
 export async function getServerSideProps() {
-	// const data = await fetcher(`${BASE_URL}/api/article/videolist`).then(
-	// 	(result) => {
-	// 		console.log(result, "results");
-	//
-	// 		if (result.data) {
-	// 			return result.data?.data;
-	// 		}
-	// 		return {};
-	// 	}
-	// );
-	return {
-		props: {
-			data: /*data ||*/ {}
-		}
-	};
+	try {
+		// const data = await fetcher(
+		// 	`${BASE_URL_INTERNL}/api/article/videolist`
+		// ).then((result) => {
+		// 	console.log(result, "results");
+		//
+		// 	if (result.data) {
+		// 		return result.data?.data;
+		// 	}
+		// 	return {};
+		// });
+		return {
+			props: {
+				data: /*data ||*/ {}
+			}
+		};
+	} catch (e) {
+		return {
+			props: {
+				data: /*data ||*/ {}
+			}
+		};
+	}
 }
 
 export default Home;

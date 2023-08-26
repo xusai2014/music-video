@@ -14,7 +14,7 @@ export default async function handler(
 	// res.status(200).json({ name: "John Doe" });
 	//res.send(`req.url: "${req.url}"`);
 	req.url =
-		"https://www.douyin.com/aweme/v1/play/?aid=6383&app_name=aweme&channel=channel_pc_web&device_platform=web&did=0&file_id=30e7d21f810940fdaa9a802f7e6db8ca&fp=verify_kyi6yfx8_STNcXLoq_GfZs_4JXx_BGFh_y19vcMZ6N8z0&is_play_url=1&line=0&referer=https%3A%2F%2Fwww.douyin.com%2Fvideo%2F7020764246476590339&sign=ef6effe0c1679572042461f21d6f2673&source=PackSourceEnum_AWEME_DETAIL&target=7020764246476590339&user_agent=Mozilla%2F5.0%20%28Macintosh%3B%20Intel%20Mac%20OS%20X%2010_16_0%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F74.0.3729.169%20Safari%2F537.36&video_id=v0300fg10000c5nc743c77u3sfnv06j0&webid=7052930793195013644";
+		"https://v21zhg6zudvl4trx75wdgfc5yxvora4sm.free-lbv3.idouyinvod.com/v3-web.douyinvod.com/7c9a2568eae6d90e06a669520db4f588/64e9823b/video/tos/cn/tos-cn-ve-15/b92a088c373d4a4c9f64bc70bffde6c6/?a=6383&ch=0&cr=0&dr=0&er=0&cd=0%7C0%7C0%7C0&cv=1&br=903&bt=903&cs=0&ds=3&ft=GN7rKGVVywIiRZm8Zmo~ySqTeaApMw_16vrKFNGVSto0g3&mime_type=video_mp4&qs=0&rc=ZDtnaGkzZGRnMzw0aTU6M0BpMzl5aTY6ZjdmODMzNGkzM0BgXzM0LzU2XmMxLTUuYWIwYSNnLWtwcjQwNGtgLS1kLTBzcw%3D%3D&btag=e00028000&dy_q=1693021159&l=202308261139191C8D89E85494D54AE0F0&ali_redirect_ex_hot=66666800&ali_redirect_ex_beacon=1";
 
 	return proxy.web(req, res, {
 		target: "http://www.douyin.com",
