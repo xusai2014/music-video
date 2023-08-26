@@ -2,8 +2,8 @@
   "name": "next-site",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3004",
-    "build": "next build",
+    "dev": "NEXT_TELEMETRY_DISABLED=1 next dev -p 3004",
+    "build": "NEXT_TELEMETRY_DISABLED=1 next build",
     "start": "pm2 start ecosystem.config.js",
     "lint": "npm-run-all --parallel --continue-on-error lint:*",
     "lint:es": "npx eslint \"**/*.{js,jsx,ts,tsx}\"",
